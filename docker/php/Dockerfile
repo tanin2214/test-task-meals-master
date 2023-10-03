@@ -14,6 +14,8 @@ RUN apt-get install -y git nano \
     zip unzip libicu-dev zlib1g-dev libzip-dev && \
     docker-php-ext-install intl zip
 
+RUN pecl install timecop-beta
+
 RUN apt-get clean
 
 RUN groupadd -g $GID app && useradd --create-home -u $UID -g $GID app
